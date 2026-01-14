@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <table border="1" cellpadding="8" style="margin: 0 auto; border-collapse: collapse; width: 600px">
+    <thead>
+      <tr>
+        <th
+          colspan="4"
+          style="background-color: #f0f0f0; text-align: center; color: blue; font-size: 18px"
+        >
+          Chuyển đổi Dương lịch thành Âm lịch
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: center">
+          Ngày
+          <select [(ngModel)]="selectedDay" style="width: 60px; padding: 2px">
+            <option *ngFor="let day of days" [value]="day">{{ day }}</option>
+          </select>
+        </td>
+        <td style="text-align: center">
+          Tháng
+          <select [(ngModel)]="selectedMonth" style="width: 60px; padding: 2px">
+            <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+          </select>
+        </td>
+        <td style="text-align: center">
+          Năm
+          <select [(ngModel)]="selectedYear" style="width: 80px; padding: 2px">
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+          </select>
+        </td>
+        <td style="text-align: center">
+          <button (click)="chuyenDoi()" style="padding: 4px 12px">Chuyển đổi</button>
+        </td>
+      </tr>
+
+      <ng-container *ngIf="lunarResult">
+        <tr>
+          <th
+            colspan="4"
+            style="background-color: #f0f0f0; text-align: center; color: blue; font-size: 18px"
+          >
+            Âm Lịch
+          </th>
+        </tr>
+
+        <tr>
+          <td colspan="2" style="width: 50%">Thứ trong tuần</td>
+          <td colspan="2" style="width: 50%; color: red">{{ lunarResult.tuan }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">Ngày tháng năm âm</td>
+          <td colspan="2" style="color: red">{{ lunarResult.ngayThangNamAm }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">Năm</td>
+          <td colspan="2" style="color: red">{{ lunarResult.nam }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">Tháng</td>
+          <td colspan="2" style="color: red">{{ lunarResult.thang }}</td>
+        </tr>
+        <tr>
+          <td colspan="2">Ngày</td>
+          <td colspan="2" style="color: red">{{ lunarResult.ngay }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
