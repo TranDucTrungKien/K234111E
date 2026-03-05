@@ -1,0 +1,9 @@
+﻿:host { display: block; padding: 30px; }
+p:first-child, a { display: inline-block; margin-bottom: 16px; }
+a { background: #0f3460; color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: background 0.2s; }
+a:hover { background: #e94560; }
+table { width: 100%; border-collapse: collapse; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+table tr:first-child td { background: #0f3460; color: #fff; font-weight: 700; padding: 12px 14px; }
+table td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+table tbody tr:hover { background: #f5f7fa; }
+img { border-radius: 6px; }

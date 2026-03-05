@@ -1,0 +1,36 @@
+{
+  "books": [
+    {
+      "BookId": "BK001",
+      "BookName": "Kỹ thuật lập trình cơ bản",
+      "Tensach": "Kỹ thuật lập trình cơ bản",
+      "Price": 70000,
+      "Giaban": "70,000 VNĐ",
+      "Image": "http://localhost:3001/image/Shin.jpg",
+      "Mota": "Cuốn sách về lập trình cơ bản",
+      "Ngaycapnhat": "01/01/2024",
+      "Soluongton": "50",
+      "MaCD": "CD01",
+      "MaNXB": "NXB01"
+    },
+    {
+      "BookId": "BK004",
+      "BookName": "Máy học nâng cao",
+      "Tensach": "Máy học nâng cao",
+      "Price": 300000,
+      "Giaban": "300,000 VNĐ",
+      "Image": "http://localhost:3001/image/sang.jpg",
+      "Mota": "Kiến thức nâng cao về AI",
+      "Ngaycapnhat": "25/01/2024",
+      "Soluongton": "15",
+      "MaCD": "CD02",
+      "MaNXB": "NXB02"
+    },
+    {
+      "BookId": "",
+      "BookName": "",
+      "Price": 0,
+      "Image": ""
+    }
+  ]
+}

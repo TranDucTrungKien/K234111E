@@ -1,0 +1,29 @@
+<div class="result-container">
+    <div class="result-card" [ngClass]="{'success': isSuccess, 'error': !isSuccess}">
+        <div class="result-icon">
+            <span *ngIf="isSuccess" class="material-icons">✓</span>
+            <span *ngIf="!isSuccess" class="material-icons">✕</span>
+        </div>
+
+        <div class="result-content">
+            <h2>{{ isSuccess ? 'Thanh toán thành công!' : 'Thanh toán thất bại!' }}</h2>
+            <p class="message">{{ message || 'Không có thông báo từ MoMo.' }}</p>
+
+            <div class="details" *ngIf="orderId">
+                <div class="detail-row">
+                    <span>Mã đơn hàng:</span>
+                    <strong>{{ orderId }}</strong>
+                </div>
+                <div class="detail-row" *ngIf="amount">
+                    <span>Số tiền:</span>
+                    <strong>{{ amount | number:'1.0-0' }} VNĐ</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-actions">
+            <button class="back-btn" (click)="goBackToHome()">Về trang chủ</button>
+            <button class="retry-btn" *ngIf="!isSuccess" routerLink="/payment">Thử lại</button>
+        </div>
+    </div>
+</div>

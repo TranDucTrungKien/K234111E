@@ -1,0 +1,16 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap");
+body { font-family: "Inter", sans-serif; }
+h3.text-center { color: #fff !important; background: #1a1a2e !important; border-bottom: 3px solid #e94560; letter-spacing: 1px; }
+.card { border: none !important; border-radius: 12px !important; box-shadow: 0 3px 14px rgba(0,0,0,0.09); transition: all 0.28s ease; overflow: hidden; }
+.card:hover { box-shadow: 0 10px 30px rgba(233,69,96,0.2) !important; transform: translateY(-5px); }
+.percent { padding: 5px 8px; background: #e94560 !important; border-radius: 5px; color: #fff; font-size: 13px; height: 26px; min-width: 52px; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: 700; }
+.wishlist { height: 32px; width: 32px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: #fff3f5; color: #e94560; cursor: pointer; }
+.img-container { position: relative; background: #f8f9fa; }
+.img-container .first { position: absolute; width: 100%; }
+.img-scale { width: 200px; height: 240px; object-fit: contain; padding: 10px; }
+.product-detail-container { padding: 14px 16px; }
+h6 { color: #1a1a2e !important; font-weight: 700 !important; }
+.text-danger { color: #e94560 !important; font-size: 1.1em; }
+.ratings i, .ratings span, .count { color: #aaa; font-size: 0.88em; }
+.btn-warning { background: #e94560 !important; border: none !important; color: #fff !important; border-radius: 7px !important; font-weight: 700 !important; padding: 10px !important; transition: background 0.2s !important; }
+.btn-warning:hover { background: #c73652 !important; }

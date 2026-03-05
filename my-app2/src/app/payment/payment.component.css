@@ -1,0 +1,25 @@
+﻿.payment-container { display: flex; justify-content: center; align-items: center; min-height: 80vh; background: linear-gradient(160deg, #0d1b2a 0%, #1a1a2e 100%); padding: 20px; }
+
+.payment-card { background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); width: 100%; max-width: 420px; overflow: hidden; border-top: 5px solid #e94560; }
+
+.payment-header { background: #1a1a2e; color: white; padding: 28px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.momo-logo { width: 52px; height: 52px; background: white; border-radius: 10px; padding: 5px; }
+.payment-header h2 { margin: 0; font-size: 1.35em; font-weight: 700; color: #fff; letter-spacing: 0.5px; }
+
+.payment-body { padding: 28px 24px; }
+
+.order-summary { background: #f8f9fa; border-radius: 10px; padding: 18px; margin-bottom: 24px; border: 1px solid #e9ecef; }
+.order-summary h3 { color: #1a1a2e; font-size: 1em; font-weight: 700; margin: 0 0 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.order-summary p { margin: 6px 0; font-size: 0.92em; color: #555; }
+.order-summary strong { color: #1a1a2e; }
+
+.price-row { display: flex; justify-content: space-between; margin-top: 14px; padding-top: 14px; border-top: 2px dashed #dee2e6; font-weight: 700; }
+.price-amount { color: #e94560; font-size: 1.25rem; font-weight: 800; }
+
+.error-alert { background: #fff5f5; color: #e94560; border: 1px solid rgba(233,69,96,0.3); padding: 11px 14px; border-radius: 8px; margin-bottom: 16px; font-size: 0.92em; }
+
+.momo-btn { width: 100%; background: #e94560; color: white; border: none; padding: 15px; font-size: 1em; font-weight: 700; border-radius: 9px; cursor: pointer; transition: all 0.25s; letter-spacing: 0.5px; }
+.momo-btn:hover { background: #c73652; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(233,69,96,0.35); }
+.momo-btn:disabled { background: #e0b0bc; cursor: not-allowed; box-shadow: none; transform: none; }
+
+.spinner { display: inline-block; }

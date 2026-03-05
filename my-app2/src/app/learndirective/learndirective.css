@@ -1,0 +1,15 @@
+﻿:host { display: block; padding: 30px; max-width: 900px; margin: 0 auto; }
+p:first-child { font-weight: 700; color: #1a1a2e; font-size: 1.1rem; margin-bottom: 16px; border-bottom: 3px solid #e94560; padding-bottom: 10px; }
+button { background: #e94560; color: #fff; border: none; padding: 9px 22px; border-radius: 6px; font-weight: 600; cursor: pointer; margin-bottom: 18px; }
+button:hover { background: #c73652; }
+h1 { font-size: 2rem; color: #0f3460; margin-bottom: 10px; }
+h3 { color: #1a1a2e; margin: 20px 0 8px; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; }
+p { margin-bottom: 6px; padding-left: 8px; border-left: 3px solid #e94560; color: #333; }
+select { width: 100%; max-width: 300px; margin-bottom: 16px; padding: 9px 12px; border-radius: 6px; border: 1.5px solid #ced4da; }
+ol { padding-left: 20px; }
+ol li { margin-bottom: 6px; color: #333; }
+table { width: 100%; border-collapse: collapse; box-shadow: 0 2px 12px rgba(0,0,0,0.08); border-radius: 10px; overflow: hidden; margin-top: 10px; }
+thead tr { background: #0f3460; color: #fff; }
+thead th { padding: 12px 14px; font-weight: 600; }
+td { padding: 10px 14px; border-bottom: 1px solid #eee; }
+tbody tr:hover { background: #f5f7fa; }

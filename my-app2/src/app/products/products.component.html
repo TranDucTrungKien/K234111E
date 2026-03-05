@@ -1,0 +1,51 @@
+<div class="products-container">
+  <div class="header">
+    <h1>🛍️ Product Catalog</h1>
+    <button class="btn-cart" (click)="goToCart()">
+      🛒 View Cart
+    </button>
+  </div>
+
+  <div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <div class="loading" *ngIf="isLoading">
+    <p>Loading products...</p>
+  </div>
+
+  <div class="products-grid" *ngIf="!isLoading && products.length > 0">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="product-image">
+        <img [src]="product.image" [alt]="product.name" />
+        <span class="stock-badge" [class.out-of-stock]="!product.inStock">
+          {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+        </span>
+      </div>
+      
+      <div class="product-info">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <p class="product-description">{{ product.description }}</p>
+        
+        <div class="product-footer">
+          <div class="price-section">
+            <span class="price">${{ product.price.toFixed(2) }}</span>
+            <span class="quantity-available">{{ product.quantity }} available</span>
+          </div>
+          
+          <button 
+            class="btn-add-cart" 
+            (click)="addToCart(product)"
+            [disabled]="!product.inStock || addingToCart[product._id]"
+          >
+            {{ addingToCart[product._id] ? 'Adding...' : '🛒 ADD TO CART' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-products" *ngIf="!isLoading && products.length === 0">
+    <p>No products available at the moment.</p>
+  </div>
+</div>

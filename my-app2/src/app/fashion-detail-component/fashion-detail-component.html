@@ -1,0 +1,16 @@
+<div class="detail-wrapper">
+  <div class="detail-header">
+    <h2>Chi tiết thời trang</h2>
+    <button class="btn-back" (click)="goBack()">← Quay lại</button>
+  </div>
+
+  <p class="err-msg" *ngIf="errMessage">{{ errMessage }}</p>
+
+  <div class="detail-card" *ngIf="fashion">
+    <img [src]="parse_image(fashion.fashion_image)" alt="{{ fashion.fashion_subject }}" class="detail-img">
+    <div class="detail-info">
+      <h3>{{ fashion.fashion_subject }}</h3>
+      <p>{{ fashion.fashion_detail }}</p>
+    </div>
+  </div>
+</div>

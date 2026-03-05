@@ -1,0 +1,7 @@
+<p>listcustomer2 works!</p>
+<ul>
+  <li *ngFor="let c of customers">
+    <img [src]="c.picture" alt="{{c.name}}" width="100">
+    {{c.id}} - {{c.name}} - {{c.age}} years old
+  </li>
+</ul>

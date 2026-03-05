@@ -1,0 +1,41 @@
+<p>learndirective works!</p>
+<button (click)="changeView()">Change View</button>
+<div *ngIf="flag_value == 1; else view">
+    <h1>UEL</h1>
+</div>
+<ng-template #view>
+    <h1>University of Economics and Law</h1>
+</ng-template>
+
+<h3>List products:</h3>
+<p *ngFor="let p of products">{{p}}</p>
+
+<h3>List products 2:</h3>
+<select>
+    <option *ngFor="let p of products">{{p}}</option>
+</select>
+
+<h3>List products 3:</h3>
+<ol>
+    <li *ngFor="let p of products">{{p}}</li>
+</ol>
+
+<h3>List customers:</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of customers">
+            <td>{{c.id}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.phone}}</td>
+            <td><img [src]="c.image" alt="{{c.name}}" style="width: 100px; height: auto;"></td>
+        </tr>
+    </tbody>
+</table>

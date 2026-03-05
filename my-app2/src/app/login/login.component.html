@@ -1,0 +1,79 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Login / Register</h2>
+    
+    <!-- Cookie Information Section -->
+    <div class="cookie-info" *ngIf="hasCookie && cookieUser">
+      <div class="alert alert-success">
+        <h4>✅ Cookie Found - Welcome Back!</h4>
+        <p><strong>Username:</strong> {{ cookieUser.username }}</p>
+        <p><strong>User ID:</strong> {{ cookieUser.id }}</p>
+        <p class="small"><em>This information was read from Cookie</em></p>
+        <button 
+          type="button" 
+          class="btn btn-clear-cookie" 
+          (click)="clearCookie()"
+        >
+          🗑️ Clear Cookie / Logout
+        </button>
+      </div>
+    </div>
+
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <form class="login-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="username" 
+          name="username"
+          placeholder="Enter username"
+          [disabled]="isLoading"
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password"
+          placeholder="Enter password"
+          [disabled]="isLoading"
+          required
+        >
+      </div>
+
+      <div class="button-group">
+        <button 
+          type="button" 
+          class="btn btn-login" 
+          (click)="onLogin()"
+          [disabled]="isLoading"
+        >
+          {{ isLoading ? 'Loading...' : 'Login' }}
+        </button>
+        
+        <button 
+          type="button" 
+          class="btn btn-register" 
+          (click)="onRegister()"
+          [disabled]="isLoading"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+
+    <div class="info-text">
+      <p>💡 When login is successful, Cookie will be saved automatically.</p>
+      <p>🔄 Reload this page to see Cookie information displayed above.</p>
+    </div>
+  </div>
+</div>

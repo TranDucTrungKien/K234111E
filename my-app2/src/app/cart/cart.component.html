@@ -1,0 +1,141 @@
+<div class="cart-container">
+  <div class="header">
+    <h1>🛒 Shopping Cart</h1>
+    <button class="btn-continue" (click)="continueShopping()">
+      ← Continue Shopping
+    </button>
+  </div>
+
+  <div class="error-message" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <div class="loading" *ngIf="isLoading">
+    <p>Loading cart...</p>
+  </div>
+
+  <div *ngIf="!isLoading && cartItems.length === 0" class="empty-cart">
+    <div class="empty-icon">🛒</div>
+    <h2>Your cart is empty</h2>
+    <p>Start shopping to add items to your cart</p>
+    <button class="btn-shop-now" (click)="continueShopping()">
+      Shop Now
+    </button>
+  </div>
+
+  <div *ngIf="!isLoading && cartItems.length > 0" class="cart-content">
+    <div class="cart-actions">
+      <button class="btn-remove-selected" (click)="removeSelectedItems()">
+        Remove Selected
+      </button>
+      <button class="btn-clear" (click)="clearCart()">
+        Clear Cart
+      </button>
+    </div>
+
+    <div class="cart-table-container">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th class="checkbox-col">
+              <input 
+                type="checkbox" 
+                [checked]="isAllSelected()"
+                (change)="toggleSelectAll($event)"
+              />
+            </th>
+            <th class="image-col">Image</th>
+            <th class="name-col">Product</th>
+            <th class="price-col">Price</th>
+            <th class="quantity-col">Quantity</th>
+            <th class="subtotal-col">Subtotal</th>
+            <th class="action-col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems" class="cart-item">
+            <td class="checkbox-col">
+              <input 
+                type="checkbox" 
+                [(ngModel)]="selectedItems[item.productId]"
+              />
+            </td>
+            <td class="image-col">
+              <img [src]="item.image" [alt]="item.name" class="product-thumbnail" />
+            </td>
+            <td class="name-col">
+              <span class="product-name">{{ item.name }}</span>
+            </td>
+            <td class="price-col">
+              <span class="price">${{ item.price.toFixed(2) }}</span>
+            </td>
+            <td class="quantity-col">
+              <div class="quantity-controls">
+                <button 
+                  class="qty-btn" 
+                  (click)="updateQuantity(item.productId, item.quantity - 1)"
+                  [disabled]="item.quantity <= 1 || isUpdating"
+                >
+                  -
+                </button>
+                <input 
+                  type="number" 
+                  class="qty-input" 
+                  [(ngModel)]="item.quantity"
+                  (change)="updateQuantity(item.productId, item.quantity)"
+                  min="1"
+                  [disabled]="isUpdating"
+                />
+                <button 
+                  class="qty-btn" 
+                  (click)="updateQuantity(item.productId, item.quantity + 1)"
+                  [disabled]="isUpdating"
+                >
+                  +
+                </button>
+              </div>
+            </td>
+            <td class="subtotal-col">
+              <span class="subtotal">${{ getSubtotal(item).toFixed(2) }}</span>
+            </td>
+            <td class="action-col">
+              <button 
+                class="btn-remove" 
+                (click)="removeItem(item.productId)"
+                title="Remove item"
+              >
+                🗑️
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cart-summary">
+      <div class="summary-card">
+        <h3>Cart Summary</h3>
+        <div class="summary-row">
+          <span>Total Items:</span>
+          <span class="value">{{ itemCount }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Total Products:</span>
+          <span class="value">{{ getTotalProductCount() }}</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total Amount:</span>
+          <span class="value">${{ total.toFixed(2) }}</span>
+        </div>
+        <div class="summary-actions">
+          <button class="btn-update" (click)="updateCart()" [disabled]="isUpdating">
+            {{ isUpdating ? 'Updating...' : 'Update Shopping Cart' }}
+          </button>
+          <button class="btn-checkout">
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

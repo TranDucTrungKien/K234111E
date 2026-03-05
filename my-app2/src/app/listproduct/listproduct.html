@@ -1,0 +1,19 @@
+<table border="2">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        <tr *ngFor="let p of products" [ngClass]="p.id == selected_id ? 'highlight' : ''">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td [ngClass]="{price_error: p.price < 0}">{{p.price | number:'1.0-0'}}</td>
+            <td><img [src]="p.image" alt="{{p.name}}" width="100" 
+                title="click for view detail"
+                style="cursor: pointer;"
+                (click)="view_detail(p.id)"></td>
+        </tr>
+    </thead>
+</table>

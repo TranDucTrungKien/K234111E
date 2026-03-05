@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --primary: #1a1a2e;
+  --secondary: #16213e;
+  --accent: #e94560;
+  --accent-hover: #c73652;
+  --teal: #0f3460;
+  --light: #f8f9fa;
+  --text: #2d2d2d;
+  --muted: #6c757d;
+  --success: #28a745;
+  --warning: #ffc107;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  color: var(--text);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th {
+  background-color: var(--teal);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+table tbody tr:nth-child(even) { background-color: #f5f7fa; }
+table tbody tr:hover { background-color: #eef1f8; transition: background 0.2s; }
+
+h1, h2, h3 { font-family: 'Inter', sans-serif; }
+
+button {
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.25s ease;
+}
+
+input, select {
+  font-family: 'Inter', sans-serif;
+  border: 1.5px solid #ced4da;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(233,69,96,0.15);
+}

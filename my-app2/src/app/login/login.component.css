@@ -1,0 +1,113 @@
+﻿.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(160deg, #0d1b2a 0%, #1a1a2e 50%, #16213e 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  padding: 44px 40px;
+  width: 100%;
+  max-width: 420px;
+  border-top: 5px solid #e94560;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #1a1a2e;
+  margin-bottom: 28px;
+  font-size: 1.8em;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.error-message {
+  background-color: #e94560;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 0.92em;
+  font-weight: 600;
+}
+
+.cookie-info { margin-bottom: 24px; }
+
+.alert {
+  padding: 18px 20px;
+  border-radius: 10px;
+  border-left: 5px solid;
+}
+
+.alert-success {
+  background-color: #f0fdf4;
+  border-color: #28a745;
+  color: #155724;
+}
+
+.alert h4 { margin-top: 0; margin-bottom: 12px; font-size: 1.1em; }
+.alert p { margin: 6px 0; font-size: 0.93em; }
+
+.alert .small {
+  font-size: 0.82em;
+  color: #888;
+  font-style: italic;
+  margin-top: 8px;
+}
+
+.btn-clear-cookie {
+  margin-top: 14px;
+  padding: 10px 20px;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.btn-clear-cookie:hover { background-color: #c73652; transform: translateY(-1px); }
+
+.login-form { display: flex; flex-direction: column; gap: 18px; }
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.form-group label { font-weight: 700; color: #444; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.form-group input {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.97em;
+  transition: border-color 0.2s;
+  background: #fafafa;
+}
+.form-group input:focus { outline: none; border-color: #e94560; background: #fff; box-shadow: 0 0 0 3px rgba(233,69,96,0.12); }
+.form-group input:disabled { background-color: #f5f5f5; cursor: not-allowed; }
+
+.button-group { display: flex; gap: 12px; margin-top: 8px; }
+
+.btn { flex: 1; padding: 12px 20px; border: none; border-radius: 9px; font-size: 0.97em; font-weight: 700; cursor: pointer; transition: all 0.25s ease; }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-login { background: #e94560; color: white; }
+.btn-login:hover:not(:disabled) { background: #c73652; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(233,69,96,0.35); }
+
+.btn-register { background: #0f3460; color: white; }
+.btn-register:hover:not(:disabled) { background: #1a4a80; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(15,52,96,0.35); }
+
+.info-text { margin-top: 22px; padding-top: 18px; border-top: 1px solid #eee; text-align: center; }
+.info-text p { color: #888; font-size: 0.87em; line-height: 1.6; }
+
+@media (max-width: 480px) {
+  .login-card { padding: 28px 20px; }
+  .button-group { flex-direction: column; }
+}
