@@ -1,0 +1,23 @@
+<div class="container" *ngIf="fashion; else loading">
+  <div class="top-bar">
+    <button class="btn-back" (click)="goBack()">&#8592; Back to List</button>
+    <button class="btn-edit" (click)="editFashion()">Edit</button>
+  </div>
+
+  <div class="detail-card">
+    <img *ngIf="fashion.thumbnail" [src]="fashion.thumbnail" alt="thumbnail" class="hero-img" />
+    <div class="info">
+      <span class="badge">{{ fashion.style }}</span>
+      <h1>{{ fashion.title }}</h1>
+      <p class="date">Published: {{ fashion.createdAt | date:'fullDate' }}</p>
+      <div class="detail-content" [innerHTML]="fashion.detail"></div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="container">
+    <div *ngIf="errMessage" class="error">{{ errMessage }}</div>
+    <p *ngIf="!errMessage">Loading...</p>
+  </div>
+</ng-template>

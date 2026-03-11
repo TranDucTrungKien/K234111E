@@ -1,0 +1,20 @@
+<div class="container" *ngIf="fashion; else loading">
+  <button class="btn-back" (click)="goBack()">&#8592; Back</button>
+
+  <article class="article">
+    <span class="badge">{{ fashion.style }}</span>
+    <h1>{{ fashion.title }}</h1>
+    <p class="date">{{ fashion.createdAt | date:'longDate' }}</p>
+
+    <img *ngIf="fashion.thumbnail" [src]="fashion.thumbnail" [alt]="fashion.title" class="hero-img" />
+
+    <div class="detail-content" [innerHTML]="fashion.detail"></div>
+  </article>
+</div>
+
+<ng-template #loading>
+  <div class="container">
+    <div *ngIf="errMessage" class="error">{{ errMessage }}</div>
+    <p *ngIf="!errMessage" class="loading">Loading...</p>
+  </div>
+</ng-template>

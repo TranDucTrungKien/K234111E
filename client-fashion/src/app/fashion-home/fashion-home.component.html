@@ -1,0 +1,39 @@
+<div class="page">
+  <!-- Search/Filter bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchKeyword"
+      (keyup.enter)="search()"
+      placeholder="Search fashions..."
+      class="search-input"
+    />
+    <button (click)="search()" class="btn-search">SEARCH</button>
+    <select [(ngModel)]="selectedStyle" (change)="filterByStyle()" class="style-select">
+      <option value="">All Styles</option>
+      <option *ngFor="let s of styles" [value]="s">{{ s }}</option>
+    </select>
+  </div>
+
+  <div *ngIf="errMessage" class="error">{{ errMessage }}</div>
+
+  <!-- Grouped by style -->
+  <div *ngFor="let group of groupedFashions" class="style-section">
+    <h2 class="style-title">{{ group.style | uppercase }}</h2>
+    <div class="grid">
+      <div class="card" *ngFor="let f of group.items" (click)="viewDetail(f._id)">
+        <div class="card-img">
+          <img *ngIf="f.thumbnail" [src]="f.thumbnail" [alt]="f.title" />
+          <div *ngIf="!f.thumbnail" class="no-img">No Image</div>
+        </div>
+        <div class="card-body">
+          <p class="card-title">{{ f.title }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="groupedFashions.length === 0 && !errMessage" class="no-data">
+    No fashions found.
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="header">
+    <h2>Fashion Management</h2>
+    <button class="btn-add" (click)="addNew()">+ Add New Fashion</button>
+  </div>
+
+  <div *ngIf="errMessage" class="error">{{ errMessage }}</div>
+
+  <table *ngIf="fashions.length > 0; else noData">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Thumbnail</th>
+        <th>Title</th>
+        <th>Style</th>
+        <th>Created At</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let f of fashions; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img *ngIf="f.thumbnail" [src]="f.thumbnail" alt="thumbnail" class="thumb" />
+          <span *ngIf="!f.thumbnail">No image</span>
+        </td>
+        <td class="title-cell">{{ f.title }}</td>
+        <td><span class="badge">{{ f.style }}</span></td>
+        <td>{{ f.createdAt | date:'dd/MM/yyyy' }}</td>
+        <td class="actions">
+          <button class="btn-view" (click)="viewDetail(f._id!)">View</button>
+          <button class="btn-edit" (click)="editFashion(f._id!)">Edit</button>
+          <button class="btn-delete" (click)="deleteFashion(f._id!, f.title)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p class="no-data">No fashions found.</p>
+  </ng-template>
+</div>
